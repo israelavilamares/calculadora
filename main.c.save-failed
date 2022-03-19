@@ -1,0 +1,252 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#include <conio.h>
+void pitagoras();
+void factorial();
+void tiempo(int v,int d,int resultado);
+int bernuallivar(int n,int k)
+{
+      if(k==0 || k==n)
+        {
+            return 1;
+
+        }else
+            {
+             return bernuallivar(n-1,k-1)+ bernuallivar(n-1,k);
+
+            }
+}
+int distacia(int v,int t)
+ {
+     printf("la varible velocidad es: ");
+     scanf("%i",&v);
+     printf("\nla varible tiempo es: ");
+     scanf("%i",&t);
+     int resultado;
+     resultado=v*t;
+   return resultado;
+
+ }
+ int capacidad_de_los_numeros()
+ {
+      double b;
+     b=00000000000.1231231;
+     return b;
+    exit(1);
+ }
+int main()
+{
+    void pitagoras();
+    void factorial(int factorial);
+    int bernuallivar(int n, int k);
+    void tiempo(int v,int d,int resultadodistacia);
+    int distacia(int v,int t);
+    int capacidad_de_los_numeros();
+int menu=0;
+ int n,k;
+ double variablep,probabilidad,variableresto,presto,resultadototal;
+int v,t;
+    printf("\nmenu");
+    printf("\n(1) pitagoras");
+    printf("\n(2) tiempo ");
+    printf("\n(3) distancia ");
+    printf("\n(4) velocidad final");
+    printf("\n(5) factorial");
+    printf("\n(6) berdulli la variable");
+    printf("\n(7) probar numeros valores");
+    printf("\n(8) numeros capacidad\n");
+    scanf("%d",&menu);
+    printf("ha eligido la opcion %i\n",menu);
+    system("pause");
+do{
+
+    switch(menu)
+    {
+    case 1:
+        system("cls");
+        pitagoras();
+        break;
+    case 2:
+        tiempo(0,0,0);
+        break;
+    case 3:
+
+        printf("\nla distacia es: %i metros\n",distacia(v,t));
+
+        break;
+     case 4:
+
+        break;
+    case 5:
+            factorial(0);
+        break;
+    case 6:
+
+      printf("\n combinatoria\n");
+      printf("nota: el numero mas grande es N\n");
+      printf("ingresa a la variable N: \n");
+      scanf("%i",&n);
+      printf("ingresa a la variable K: \n");
+      scanf("%i",&k);
+      printf("combinacion es: %i\n",bernuallivar(n,k));
+      printf("\nla variable de probabilidad es:  ");
+      scanf("%lf",&variablep);
+      probabilidad=pow(variablep,k);
+      printf("\nla ecuacion de probabilidad es: %lf ",probabilidad);
+     // printf("\nla variable de probabilidad -1 es: ");
+      variableresto= 1 - variablep;
+      printf("\nla varible de resto %lf",variableresto);
+      //scanf("%Lf",&variableresto);
+      presto=pow(variableresto,n-k);
+      printf("\nla ecuacion de probabilidad -1 es: %lf",presto);
+      resultadototal=bernuallivar(n,k) * probabilidad * presto;
+      printf("\nel resultado total= %lf",resultadototal);
+        break;
+    case 7:
+        printf("el numero de variables es: %i",capacidad_de_los_numeros());
+        exit(1);
+        system("pause");
+        break;
+    case 8:
+       printf("\nsalir\n");
+    default:
+        printf("error de caracter");
+        break;
+    }
+        }while(menu!=8);
+
+    return 0;
+}
+
+ void pitagoras()
+    {
+        int menu_tales,i,k,q;
+        double a,b,c,sumaexponentes,restaexponentes2,restaexponentes3;
+
+    do{
+
+        menu_tales=0;
+        printf("a entrado a la calculadora de pitagoras \n");
+        printf("\nbienvenido\n");
+        printf("\nponga un valor a los datos\n");
+        printf("         menu           ");
+        printf("\n(1) si buscas al hipotenusa:  ");
+        printf("\n(2) si buscas al cateto 'a':  ");
+        printf("\n(3) si buscas al cateto 'b':  ");
+        printf("\n(4) saliendo");
+        printf("\nelige una opcion: ");
+        scanf("%i",&menu_tales);
+        switch(menu_tales)
+        {
+        case 1:
+
+            printf("quiere salir presione 0\n");
+            scanf("%i",&q);
+            while(q!=0){
+            printf("quiere salir presione 0\n");
+            scanf("%i",&q);
+            printf("dato de cateto a es: ");
+            scanf("%lf",&a);
+            printf("dato de cateto b es: ");
+            scanf("%lf",&b);
+           sumaexponentes=pow(a,2) + pow(b,2);
+             printf("exponentes %lf",sumaexponentes);
+             c=sqrt(sumaexponentes);
+            printf("el resultado de hipotenusa es %lf \n",c);
+            system("pause");
+            printf("quiere salir presione 0\n");
+            scanf("%i",&q);
+            if(a<=0)
+            {
+                printf("\n error no hay raices negativas");
+
+            }
+            system("pause");
+                }
+            break;
+        case 2:
+
+            printf("quiere salir presione 0 para continuar 1\n");
+            scanf("%i",&i);
+            while(i!=0){
+            printf("dato de hipotenusa es: ");
+            scanf("%lf",&c);
+            printf("dato de cateto b es: ");
+            scanf("%lf",&b);
+            restaexponentes2=(pow(c,2) - pow(b,2));
+            a=sqrt(restaexponentes2);
+            printf("\nel resultado de cateto a es: %lf ",a);
+            system("pause");
+            printf("quiere salir presione 0\n");
+            scanf("%i",&q);
+            if(a<=0)
+            {
+                printf("\n error no hay raices negativas");
+
+            }
+            system("pause");
+            system("cls");
+            }
+            break;
+        case 3:
+            printf("quiere salir presione 0 para continuar 1\n");
+            scanf("%i",&k);
+            while(k!=0){
+            printf("dato de hipotenusa es: ");
+            scanf("%lf",&c);
+            printf("dato de cateto b es: ");
+            scanf("%lf",&a);
+            restaexponentes3=(pow(c,2) - pow(a,2));
+            b=sqrt(restaexponentes3);
+            printf("\nel resultado de cateto b es: %lf ",b);
+            system("PAUSE");
+            printf("quiere salir presione 0\n");
+            scanf("%i",&q);
+            if(a<=0)
+            {
+                printf("\n error no hay raices negativas");
+
+            }
+            system("pause");
+            }
+            break;
+        case 4:
+            printf("saliendo ");
+            break;
+        default:
+            printf("caracter malo\n");
+            break;
+        }
+            }while(menu_tales!=4);
+            }
+
+void factorial(int factorial)
+    {
+        int i,n;
+        factorial=1;
+        printf("\nsaca un numero\n");
+        scanf("%i",&n);
+        for(i=1;i<=n;i++)
+        {
+               factorial*=i;
+        }
+        printf("\n el factorial es: %i",factorial);
+
+    }
+void tiempo(int v,int d,int resultado)
+    {
+
+        int s;
+        while(s!=0){
+    printf("\npara salir ponga 0 y para continuar terminar\n");
+    scanf("%i",&s);
+     printf("\nponga un dato de distancia");
+     scanf("%i, ",&d);
+     printf("ponga un dato de velocidad");
+     scanf("%i,",&v);
+     resultado=v/d;
+     printf("\nresultado de tiempo es: %i minutos",resultado);
+        }
+    }
